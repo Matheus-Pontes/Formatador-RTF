@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Vite App</title>
+  </head>
+  <body class="bg-zinc-900 antialiased mt-[72px] ml-[82px] mr-[82px] grid place-content-center place-items-center">
+    <div id="app">
+      <h1 class="text-4xl bold text-white text-center">Formatador RFT</h1>
+
+      <div class="flex items-center justify-center gap-9 mt-6" id="actions">
+        <button data-action="bold" class="bg-zinc-950 w-12 h-12 flex items-center justify-center rounded-lg border border-blue-600 text-white text-xl">
+          <i data-action="bold" class="ph ph-text-b"></i>
+        </button>
+        <button data-action="italic" class="bg-zinc-950 w-12 h-12 flex items-center justify-center rounded-lg border border-blue-600 text-white text-xl">
+          <i data-action="italic" class="ph ph-text-italic"></i>
+        </button>
+        <button data-action="underline" class="bg-zinc-950 w-12 h-12 flex items-center justify-center rounded-lg border border-blue-600 text-white text-xl">
+          <i data-action="underline" class="ph ph-text-underline"></i>
+        </button>
+        <button data-action="subscript" class="bg-zinc-950 w-12 h-12 flex items-center justify-center rounded-lg border border-blue-600 text-white text-xl">
+          <i data-action="subscript" class="ph ph-text-subscript"></i>
+        </button>
+        <button data-action="superscript" class="bg-zinc-950 w-12 h-12 flex items-center justify-center rounded-lg border border-blue-600 text-white text-xl">
+          <i data-action="superscript" class="ph ph-text-superscript"></i>
+        </button>
+      </div>
+
+      <div class="relative w-96 h-48 mt-6 mx-auto">
+        <div id="copy" class="absolute right-0 p-2 text-base text-white cursor-pointer">
+          <i class="ph ph-copy"></i>
+        </div>
+        <textarea name="conteudo" id="conteudo" class="w-full h-full resize-none p-4 border-2 border-blue-600 rounded-lg bg-zinc-800 outline-none text-white"></textarea>
+      </div>
+
+      <div class="relative w-96 h-24 mt-6 mx-auto">
+        <label class="text-white">Pré-visualização: </label>
+        <div id="preview" class="w-full h-full resize-none p-4 border-2 border-blue-600 rounded-lg bg-zinc-800 outline-none text-white"></div>
+      </div>
+
+    </div>
+    <script type="module" src="src/index.js"></script>
+  </body>
+</html>

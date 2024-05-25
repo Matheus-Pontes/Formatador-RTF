@@ -9,6 +9,8 @@
 ## Layout
 - [Figma](https://www.figma.com/design/21QgmGMW6fL6WPXhUotw4T/Formatador-rtf?node-id=1-17&t=U78fc8yoIJNDsgmL-1)
 
+- ![Imagem projeto](/layout.png)
+
 ## Funcionalidades
 - Negrito
 - Underline

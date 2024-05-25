@@ -6,6 +6,9 @@
 - No projeto, o usuário seleciona com o mouse ou com o teclado o texto que deseja aplicar formatação e clica em um dos 5 botões que temos até o momento e formatação vai ser aplicada.
 - Ainda no projeto, temos um campo de preview, ou seja, como vai ser esperado o resultado com código RTF em outros arquivos.  
 
+## Layout
+- [Figma](https://www.figma.com/design/21QgmGMW6fL6WPXhUotw4T/Formatador-rtf?node-id=1-17&t=U78fc8yoIJNDsgmL-1)
+
 ## Funcionalidades
 - Negrito
 - Underline

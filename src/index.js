@@ -3,6 +3,45 @@ const preview = document.getElementById("preview");
 const btnCopy = document.getElementById("copy");
 let selectedText;
 
+let actionsEditor = {
+    conteudoFormatado: "",
+    bold: () => {
+        if (selectedText != "") {
+            actionsEditor.conteudoFormatado = " \\b " + selectedText + " \\b0 ";
+            conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
+            preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
+        }
+    },
+    italic: () => {
+        if (selectedText != "") {
+            actionsEditor.conteudoFormatado = " \\i " + selectedText + " \\i0 ";
+            conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
+            preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
+        }
+    },
+    underline: () => {
+        if (selectedText != "") {
+            actionsEditor.conteudoFormatado = " \\ul " + selectedText + " \\ul0 ";
+            conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
+            preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
+        }
+    },
+    subscript: () => {
+        if (selectedText != "") {
+            actionsEditor.conteudoFormatado = " \\sub " + selectedText + " \\sub0 ";
+            conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
+            preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
+        }
+    },
+    superscript: () => {
+        if (selectedText != "") {
+            actionsEditor.conteudoFormatado = " \\super " + selectedText + " \\super0 ";
+            conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
+            preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
+        }
+    }
+}
+
 function formatContextRTFToHTML(text) {
     return text.replace("\\b", "<b>")
                .replace("\\b0", "</b>")
@@ -12,8 +51,8 @@ function formatContextRTFToHTML(text) {
                .replace("\\ul0", "</u>")
                .replace("\\sub", "<sub>")
                .replace("\\sub0", "</sub>")
-               .replace("\\super", "<super>")
-               .replace("\\super0", "</super>");
+               .replace("\\super", "<sup>")
+               .replace("\\super0", "</sup>");
 }
 
 conteudoRft.addEventListener("input", function(e) {
@@ -34,35 +73,6 @@ btnCopy.addEventListener("click", function() {
         alert('Não foi possível copiar!');
     }
 });
-
-let actionsEditor = {
-    conteudoFormatado: "",
-    bold: () => {
-        actionsEditor.conteudoFormatado = " \\b " + selectedText + " \\b0 ";
-        conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
-        preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
-    },
-    italic: () => {
-        actionsEditor.conteudoFormatado = " \\i " + selectedText + " \\i0 ";
-        conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
-        preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
-    },
-    underline: () => {
-        actionsEditor.conteudoFormatado = " \\ul " + selectedText + " \\ul0 ";
-        conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
-        preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
-    },
-    subscript: () => {
-        actionsEditor.conteudoFormatado = " \\sub " + selectedText + " \\sub0 ";
-        conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
-        preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
-    },
-    superscript: () => {
-        actionsEditor.conteudoFormatado = " \\super " + selectedText + " \\super0 ";
-        conteudoRft.value = conteudoRft.value.replace(selectedText, actionsEditor.conteudoFormatado);
-        preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
-    }
-}
 
 document.getElementById("actions").addEventListener('click', function(e) {
     if(!e.target.matches('[data-action]')) {

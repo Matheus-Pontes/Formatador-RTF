@@ -7,3 +7,19 @@ button {
 button:hover {
   box-shadow: none;
 }
+
+#conteudo::-webkit-scrollbar,
+#preview::-webkit-scrollbar {
+  width: 12px;
+}
+
+#conteudo::-webkit-scrollbar-track,
+#preview::-webkit-scrollbar-track {
+  background: #27272A; /* Cor do trilho da barra de rolagem */
+}
+
+#conteudo::-webkit-scrollbar-thumb,
+#preview::-webkit-scrollbar-thumb {
+  background: #2563EB; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 6px; /* Bordas arredondadas */
+}

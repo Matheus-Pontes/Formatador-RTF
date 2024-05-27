@@ -43,16 +43,16 @@ let actionsEditor = {
 }
 
 function formatContextRTFToHTML(text) {
-    return text.replace("\\b", "<b>")
-               .replace("\\b0", "</b>")
-               .replace("\\i", "<i>")
-               .replace("\\i0", "</i>")
-               .replace("\\ul", "<u>")
-               .replace("\\ul0", "</u>")
-               .replace("\\sub", "<sub>")
-               .replace("\\sub0", "</sub>")
-               .replace("\\super", "<sup>")
-               .replace("\\super0", "</sup>");
+    return text.replaceAll("\\b", "<b>")
+               .replaceAll("\\b0", "</b>")
+               .replaceAll("\\i", "<i>")
+               .replaceAll("\\i0", "</i>")
+               .replaceAll("\\ul", "<u>")
+               .replaceAll("\\ul0", "</u>")
+               .replaceAll("\\sub", "<sub>")
+               .replaceAll("\\sub0", "</sub>")
+               .replaceAll("\\super", "<sup>")
+               .replaceAll("\\super0", "</sup>");
 }
 
 conteudoRft.addEventListener("input", function(e) {

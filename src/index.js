@@ -1,3 +1,5 @@
+import { controleDeTeclaParaFormatacao } from "./util";
+
 const conteudoRft = document.getElementById("conteudo");
 const preview = document.getElementById("preview");
 const btnCopy = document.getElementById("copy");
@@ -56,6 +58,17 @@ function formatContextRTFToHTML(text) {
 }
 
 conteudoRft.addEventListener("input", function(e) {
+    preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
+});
+
+conteudoRft.addEventListener('keydown', (event) => {
+    const nomeTecla = event.key.toLowerCase();
+    
+    const action = controleDeTeclaParaFormatacao(event, nomeTecla);
+
+    if(action != "")
+        actionsEditor[action]();
+
     preview.innerHTML = formatContextRTFToHTML(conteudoRft.value);
 });
 
